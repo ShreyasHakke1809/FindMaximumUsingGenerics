@@ -6,35 +6,26 @@ using System.Threading.Tasks;
 
 namespace FindMaximumUsingGenerics
 {
-    internal class FindMaximum <T> where T : IComparable
+    internal class FindMaximum 
     {
-        public T[] genValue;
-        public FindMaximum(T[] genValue)                      
+        public T GetMaxOfThree<T>(T a, T b, T c) where T : IComparable
         {
-            this.genValue = genValue;
-        }
-        public T[] Sorting(T[] genValue)
-        {
-            Array.Sort(genValue);
-            Array.Reverse(genValue);
-            return genValue;
-        }
-        public T GetMaxOfThree(T[] genValue)
-        {
-            var sortedArray = Sorting(genValue);
-            return sortedArray.ElementAt(0);
-        }
-        public T GetMax()
-        {
-            T maxValue = GetMaxOfThree(this.genValue);
-            return maxValue;
-        }
-        public void PrintMax()
-        {
-            T maxValue = GetMaxOfThree(this.genValue);
-            Console.WriteLine("Maximum value is : " + maxValue);
+            if (a.CompareTo(b) >= 0 && a.CompareTo(c) >= 0)
+            {
+                return a;
+            }
+            else if (b.CompareTo(a) >= 0 && b.CompareTo(c) >= 0)
+            {
+                return b;
+            }
+            else if (c.CompareTo(a) >= 0 && c.CompareTo(b) >= 0)
+            {
+                return c;
+            }
+            return default;
         }
 
     }
 }
+
 
