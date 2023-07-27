@@ -9,19 +9,16 @@ namespace FindMaximumUsingGenerics
     internal class FindMaximum <T> where T : IComparable
     {
         public T[] genValue;
-
         public FindMaximum(T[] genValue)                      
         {
             this.genValue = genValue;
         }
-
         public T[] Sorting(T[] genValue)
         {
             Array.Sort(genValue);
             Array.Reverse(genValue);
             return genValue;
         }
-
         public T GetMaxOfThree(T[] genValue)
         {
             var sortedArray = Sorting(genValue);
@@ -31,6 +28,11 @@ namespace FindMaximumUsingGenerics
         {
             T maxValue = GetMaxOfThree(this.genValue);
             return maxValue;
+        }
+        public void PrintMax()
+        {
+            T maxValue = GetMaxOfThree(this.genValue);
+            Console.WriteLine("Maximum value is : " + maxValue);
         }
 
     }

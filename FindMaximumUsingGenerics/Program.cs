@@ -11,18 +11,21 @@
             {
                     case 1:
                     int[] intArray = {09,18,27,36};
-                    int max = new FindMaximum<int>(intArray).GetMax();
+                    FindMaximum <int> max = new FindMaximum<int>(intArray);
                     Console.WriteLine("Maximum is " + max);
+                    max.PrintMax();
                     break;
                     case 2:
                     float[] floatArray = {09.18f, 27.09f, 45.63f, 72.99f};
-                    float fmax = new FindMaximum<float>(floatArray).GetMax();
+                    FindMaximum<float> fmax = new FindMaximum<float>(floatArray);   
                     Console.WriteLine("Maximum is " + fmax);
+                    fmax.PrintMax();
                     break;
                     case 3:
                     string[] strArray = {"abc", "lmn", "pqr", "xyz"};
-                    string smax = new FindMaximum<string>(strArray).GetMax();
+                    FindMaximum<string> smax = new FindMaximum<string>(strArray);   
                     Console.WriteLine("Maximum is "+  smax);
+                    smax.PrintMax();
                     break;
             }
         }
